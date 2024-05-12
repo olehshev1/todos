@@ -1,0 +1,26 @@
+.register-box
+  .register-logo
+    / a href="../../index2.html"
+    a href="/"
+      b> Admin
+      | LTE
+  .card
+    .card-body.register-card-body
+      p.login-box-msg = t('devise.custom.registrations.title')
+      / form action="../../index.html" method="post"
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render partial: 'new_form', locals: {f: f}
+      /! /.col
+      / .social-auth-links.text-center
+        p - OR -
+        a.btn.btn-block.btn-primary href="#"
+          i.fab.fa-facebook.mr-2
+          | Sign up using Facebook
+        a.btn.btn-block.btn-danger href="#"
+          i.fab.fa-google-plus.mr-2
+          | Sign up using Google+
+      / a.text-center href="login.html"  I already have a membership
+      = render "users/shared/links"
+      /! /.form-box
+      /! /.card
+      /! /.register-box

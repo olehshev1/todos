@@ -1,0 +1,66 @@
+= f.error_notification
+.input-group.mb-3
+  / input.form-control placeholder=("Full name") type="text" /
+  = f.input_field :username,
+          required: true,
+          autofocus: true,
+          autocomplete: 'username',
+          placeholder: t('devise.custom.username'),
+          type: :text,
+          class: 'form-control'
+  .input-group-append
+    .input-group-text
+      span.fas.fa-user
+.input-group.mb-3
+  / input.form-control placeholder="Email" type="email" /
+  = f.input_field :email,
+          required: true,
+          autofocus: true,
+          autocomplete: 'email',
+          placeholder: t('devise.custom.email'),
+          type: :email,
+          class: 'form-control'
+  / = f.input :email,
+                  required: true,
+                  autofocus: true,
+                  label: false,
+                  input_html: {autocomplete: "email",
+                          placeholder: 'Email'}
+  .input-group-append
+    .input-group-text
+      span.fas.fa-envelope
+.input-group.mb-3
+  / input.form-control placeholder="Password" type="password" /
+  = f.input_field :password,
+          required: true,
+          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+          autocomplete: 'new-password',
+          placeholder: t('devise.custom.password'),
+          type: :password,
+          class: 'form-control'
+  .input-group-append
+    .input-group-text
+      span.fas.fa-lock
+.input-group.mb-3
+  / input.form-control placeholder=("Retype password") type="password" /
+  = f.input_field :password_confirmation,
+          required: true,
+          autocomplete: 'new-password',
+          placeholder: t('devise.custom.retype password'),
+          type: :password,
+          class: 'form-control'
+  .input-group-append
+    .input-group-text
+      span.fas.fa-lock
+.row
+  .col-8
+  / .icheck-primary
+              input#agreeTerms name="terms" type="checkbox" value="agree" /
+              label for="agreeTerms"
+                | I agree to the
+                a href="#"  terms
+  /! /.col
+  .col-4
+    / button.btn.btn-primary.btn-block type="submit"  Register
+    = f.button :submit, t('devise.custom.registrations.register'), class: 'btn btn-primary btn-block'
+

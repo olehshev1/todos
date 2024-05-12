@@ -1,0 +1,14 @@
+tr
+  td.th_collapse_todo
+    .form-group
+  td
+    - if todo.status.name == 'Complete'
+      .todo_complete
+        = todo.name
+    - elsif todo.status.name == 'In progress'
+      div.todo_in_progress
+        = todo.name
+    - else
+      = todo.name
+  td.todo
+    .btn-row

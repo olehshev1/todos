@@ -1,0 +1,91 @@
+ru:
+  do it: "Сделать это"
+  are you sure?: "Вы уверены?"
+  back: "Назад"
+  welcome: "Добро пожаловать"
+  hello: "Здравствуйте"
+  name: "Название"
+  description: "Описание"
+  photo: "Фото"
+  cancel: 'Отмена'
+  save: 'Сохранить'
+  action: 'Действия'
+  remove: 'Удалить'
+  remove photo: 'Удалить фотографию'
+  edit: 'Редактировать'
+  confirm: 'Вы уверены что хотите удалить это?'
+  admin_panel: 'Управление:'
+  about: 'О проекте'
+  about_description: "Проект TODO's призван реализовать тестовое задание по ведению учета управлением задач."
+  errors:
+    Oops! Page not found: 'К сожалению! Страница не найдена.'
+    We could not find the page you were looking for: 'Мы не смогли найти страницу, которую вы искали.'
+    Meanwhile, you may: ' Между тем, вы можете'
+    return to Main page: ' Вернуться на главную страницу'
+    or try using the search form: ' или попробуйте воспользоваться формой поиска'
+    search: 'Поиск'
+  admin:
+    dashboard3: 'Dashboard v3'
+    home: 'Главная'
+    statuses:
+      name: 'Статус'
+      list: 'Статусы'
+      add: 'Добавить новый статус'
+      new: 'Новый статус'
+      edit: 'Редактирование статуса'
+      remove: 'Удалить статус'
+      Todo was mark as Complete: 'Дело помечено как завершонное'
+      Todo is back to Incomplete: 'Дело перевдено обратно в незавершонное состояние'
+    accesses:
+      name: 'Уровень доступа'
+      list: 'Уровни доступа'
+      add: 'Добавить новый уровень доступа'
+      new: 'Новый уровень доступа'
+      edit: 'Редактирование уровень доступа'
+      remove: 'Удалить уровень доступа'
+    lists:
+      name: 'Список дел'
+      list: 'Списки дел'
+      add: 'Добавить новый список дел'
+      new: 'Новый список дел'
+      edit: 'Редактирование списка дел'
+      remove: 'Удалить список дел'
+      progress: 'Прогрес'
+      readonly: 'Дела других пользователей'
+      username: 'Пользователь'
+    activerecord:
+      models:
+        status:
+          one: 'Статус'
+          other: 'Статусы'
+          attributes:
+            name:
+              placeholder: 'Название'
+          values:
+            name:
+              Complete: 'Выполнено'
+              Incomplete: 'Не выполнено'
+              In progress: 'В процессе выполнения'
+        access:
+          one: 'Уровень доступа'
+          other: 'Уровни доступа'
+          attributes:
+            name:
+              placeholder: 'Название'
+          values:
+            name:
+              Public: 'Может просматривать буть кто в режиме чтения'
+              Protect: 'Может просматривать любой зарегистрированный пользователь в режиме чтения'
+              Private: 'Only for me, full access'
+        list:
+          one: 'Список дел'
+          other: 'Списки дел'
+          attributes:
+            name:
+              placeholder: 'Название'
+        todo:
+          attributes:
+            one: 'Дело'
+            other: 'Дела'
+            name:
+              placeholder: 'Название'

@@ -30,4 +30,105 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello world: "Hello world"
+  do it: "Do it"
+  are you sure?: "Are you sure?"
+  back: "Back"
+  welcome: "Welcome"
+  hello: "Hello"
+  name: "Name"
+  description: "Description"
+  photo: "Photo"
+  cancel: 'Cancel'
+  save: 'Save'
+  action: 'Action'
+  remove: 'Remove'
+  remove photo: 'Remove photo'
+  edit: 'Edit'
+  confirm: 'Are you sure that you want remove it?'
+  admin_panel: 'Manage:'
+  about: 'About the project'
+  about_description: "The TODO's project aims to accomplish the task of accounting for task management accounting."
+  errors:
+    Oops! Page not found: 'Oops! Page not found.'
+    We could not find the page you were looking for: 'We could not find the page you were looking for.'
+    Meanwhile, you may: ' Meanwhile, you may'
+    return to Main page: ' return to Main page'
+    or try using the search form: ' or try using the search form'
+    search: 'Search'
+  admin:
+    dashboard3: 'Dashboard v3'
+    home: 'Home'
+    statuses:
+      name: 'Status'
+      list: 'Statuses'
+      add: 'Add new status'
+      new: 'New status'
+      edit: 'Edit status'
+      remove: 'Remove status'
+      Todo was mark as Complete: 'Todo was mark as Complete'
+      Todo is back to Incomplete: 'Todo is back to Incomplete'
+    accesses:
+      name: 'Level access'
+      list: 'Levels access'
+      add: 'Add new level access'
+      new: 'New level access'
+      edit: 'Edit level access'
+      remove: 'Remove level access'
+    lists:
+      name: 'To-do list'
+      list: 'To-do lists'
+      add: 'Add new to-do list'
+      new: 'New to-do list'
+      edit: 'Edit to-do list'
+      remove: 'Remove to-do list'
+      progress: 'Progress'
+      readonly: 'To-dos other users'
+      username: 'Username'
+    todos:
+      name: 'To-do'
+      list: 'To-dos'
+      add: 'Add new to-do'
+      new: 'New to-do'
+      edit: 'Edit to-do'
+      remove: 'Remove to-do'
+    activerecord:
+      models:
+        status:
+          attributes:
+            one: 'Status'
+            other: 'Statuses'
+            name:
+              placeholder: 'Name'
+          values:
+            name:
+              Complete: 'Complete'
+              Incomplete: 'Incomplete'
+              In progress: 'In progress'
+        access:
+          one: 'Level access'
+          other: 'Levels access'
+          attributes:
+            name:
+              placeholder: 'Name'
+          values:
+            name:
+              Public: 'It can be viewed by anyone in read mode'
+              Protect: 'Any registered user can read it in read mode'
+              Private: 'Only for me, full access'
+        list:
+          one: 'To-do list'
+          other: 'To-do lists'
+          attributes:
+            name:
+              placeholder: 'Name'
+        todo:
+          one: 'To-do'
+          other: 'To-dos'
+          attributes:
+            name:
+              placeholder: 'Name'
+  will_paginate:
+    previous_label: "&#8592; Previous"
+    next_label: "Next &#8594;"
+    page_gap: "&hellip;"

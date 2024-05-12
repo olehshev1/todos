@@ -1,0 +1,18 @@
+= content_for(:title, t('admin.todos.new'))
+= simple_form_for [:admin, @list, @todo] do |f|
+  /! Main content
+  .content
+    .container-fluid
+      /! /.container-fluid
+      /! /.content
+      .row
+        .col-md-8
+          .card.card-yellow
+            .card-header
+              = t('admin.todos.new')
+            .card-body
+              = render partial: 'form', locals: {f: f}
+            .card-footer
+              = link_to  admin_list_todos_path(@list), class: 'btn btn-danger'
+                = t(:cancel)
+              = f.submit t(:save), class: 'btn btn-success pull-right'

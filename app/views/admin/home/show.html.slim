@@ -1,0 +1,93 @@
+= content_for(:title, t('admin.todos.list'))
+/! Main content
+.content
+  .container-fluid
+    .row
+      .col-md-6.col-md-offset-10
+        = link_to new_admin_list_path, class: 'btn btn-success pull-right'
+          i.fas.fa-plus
+          |
+          = t('admin.lists.add')
+    p
+    .accordion#to-do-lists
+      .card
+        .card-body.p-0
+          table.table.table-striped
+            thead
+              tr.tr_title
+                th.th_collapse
+                th
+                  = t('admin.lists.list')
+                th.th_inprogress
+                  = t('admin.lists.progress')
+                th.th_todos
+                  = t('admin.todos.list')
+                th.th_actions
+                  = t('action')
+    - @lists.each do |list|
+      table.table.table-striped
+        tbody
+          tr
+            td.th_collapse
+              div.th_collapse id="heading#{list.id}"
+                = link_to raw('<i class="fas fa-angle-double-down"></i>'), "#multiCollapseList#{list.id}",
+                        style: 'color: grey',
+                        title: t('admin.todos.add'),
+                        'aria-controls' => "multiCollapseList#{list.id}",
+                        'aria-expanded' => 'true',
+                        'data-toggle' => 'collapse',
+                            role: 'button'
+            td.td_list_name
+              = list.name
+              - if current_user.admin_role?
+                .username
+                  = list.user.username
+            td.th_progress
+              .progress.progress-xs
+                .progress-bar.progress-bar-danger style=("width: #{list.todos_complete}%")
+              span.badge.bg-danger
+                =  "#{list.todos_complete}%"
+            td.th_todos
+              .btn-row
+                .btn-group
+                  = link_to raw('<i class="fas fa-plus"></i>'), "#multiCollapseNewTodos#{list.id}",
+                          class: 'btn btn-sm btn-warning',
+                          style: 'margin-right: 10px',
+                          title: t('admin.todos.add'),
+                          'aria-controls' => "multiCollapseNewTodos#{list.id}",
+                                  'aria-expanded' => 'false',
+                                  'data-toggle' => 'collapse',
+                                  role: 'button'
+                  = link_to raw('<i class="fas fa-list-ol"></i>'), admin_list_todos_path(list),
+                          class: 'btn btn-sm btn-warning',
+                          style: 'margin-right: 10px',
+                          title: t('admin.todos.list')
+            td.th_actions
+              .btn-row
+                .btn-group
+                  = link_to raw('<i class="far fa-edit"></i>'), edit_admin_list_path(list),
+                          class: 'btn btn-sm btn-warning actions_margin',
+                          title: t('edit')
+                  = link_to raw('<i class="far fa-trash-alt"></i>'), admin_list_path(list),
+                          class: 'btn btn-sm btn-warning actions_margin',
+                          method: :delete,
+                          data: {confirm: t('confirm')},
+                          title: t('remove')
+      div.collapse.multi-collapse id="multiCollapseNewTodos#{list.id}"
+        .todo_collapse
+          table.table
+            tbody
+              tr
+                td
+                  = render partial: 'new_todo', locals: {list: list}
+      div.collapse.show.multi-collapse id="multiCollapseList#{list.id}"
+        .todo_new_collapse
+          table.table
+            tbody
+              - list.todos.each do |todo|
+                = render partial: "admin/home/index_todo", locals: {list: list, todo: todo}
+        /! /.card-body
+      /! /.card
+    = will_paginate @lists, list_classes: %w(pagination justify-content-end)
+  /! /.container-fluid
+  /! /.content

@@ -1,0 +1,13 @@
+/! Content Header (Page header)
+.content-header
+  .container-fluid
+    .row.mb-2
+      .col-sm-6
+        h1.m-0.text-dark
+          = content_for?(:title) ? yield(:title) : Rails.application.credentials[Rails.env.to_sym][:site_title]
+      /! /.col
+    = render partial: 'admin/shared/flash'
+    /! /.col
+    /! /.row
+    /! /.container-fluid
+    /! /.content-header

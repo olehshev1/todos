@@ -1,0 +1,31 @@
+tr
+  td.th_collapse_todo
+    .form-group
+      .custom-control.custom-checkbox
+        = check_box_tag "customCheckbox#{todo.id}", '',
+                todo.status.name == 'Complete' ? true : false,
+                class: 'custom-control-input'
+        = label_tag "customCheckbox#{todo.id}", '', class: 'custom-control-label'
+  td
+    - if todo.status.name == 'Complete'
+      .todo_complete
+        = todo.name
+    - elsif todo.status.name == 'In progress'
+      div.todo_in_progress
+        = todo.name
+    - else
+      = todo.name
+  td.todo
+    .btn-row
+      = link_to raw('<i class="far fa-edit"></i>'), edit_admin_list_todo_path(list, todo),
+              class: 'btn btn-sm btn-warning actions_margin_todo',
+              title: t('edit')
+      = link_to raw('<i class="far fa-trash-alt"></i>'), admin_list_todo_path(list, todo),
+              class: 'btn btn-sm btn-warning actions_margin_todo',
+              method: :delete,
+              data: {confirm: t('confirm')},
+              title: t('remove')
+= content_for(:custom_script) do
+  = render partial: "admin/home/checked_todo.js", locals: {todo: todo}
+= form_tag done_admin_list_todo_path(list,todo), id: "status_update_todo#{todo.id}",  method: :put do
+  = hidden_field_tag :status_name, todo.status.name == 'Complete' ? 'Incomplete' : 'Complete', id: "status_name_todo#{todo.id}"

@@ -1,0 +1,31 @@
+.login-box
+  .login-logo
+    / a href="../../index2.html"
+    a href="/"
+      b> Admin
+      | LTE
+  /! /.login-logo
+  .card
+    .card-body.login-card-body
+      p.login-box-msg = t('devise.custom.sessions.title')
+      = render partial: 'auth/shared/flash'
+      / form action="../../index3.html" method="post"
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        = render partial: 'form', locals: {f: f}
+      /! /.col
+      / .social-auth-links.text-center.mb-3
+        p - OR -
+        a.btn.btn-block.btn-primary href="#"
+          i.fab.fa-facebook.mr-2
+          | Sign in using Facebook
+        a.btn.btn-block.btn-danger href="#"
+          i.fab.fa-google-plus.mr-2
+          | Sign in using Google+
+      /! /.social-auth-links
+      p.mb-1
+        / a href="forgot-password.html"  I forgot my password
+        = render "users/shared/links"
+      p.mb-0
+        / a.text-center href="register.html"  Register a new membership
+        /! /.login-card-body
+        /! /.login-box

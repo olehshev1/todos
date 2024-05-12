@@ -1,0 +1,48 @@
+= content_for(:title, t('admin.accesses.list'))
+/! Main content
+.content
+  .container-fluid
+    /! /.container-fluid
+    /! /.content
+    .row
+      .col-md-6.col-md-offset-10
+        = link_to new_admin_access_path, class: 'btn btn-success pull-right'
+          i.fas.fa-plus
+          |
+          = t('admin.accesses.add')
+    .row
+      p
+
+    .row
+      .col-12
+        .card.card-yellow
+          .card-header
+            h3.card-title
+              = t('admin.accesses.list')
+          /! /.card-header
+          .card-body.p-0
+            table.table.table-condensed
+              thead
+                tr
+                  th style=("width: 30px")
+                    = t('name')
+                  th style=("width: 15px")
+                    = t('action')
+
+              tbody
+                - @accesses.each do |access|
+                  tr
+                    td
+                      = access.name
+                    td
+                      .btn-row
+                        = link_to raw('<i class="far fa-edit"></i>'), edit_admin_access_path(access),
+                                class: 'btn btn-sm btn-warning',
+                                style: 'margin-right: 10px',
+                                title: t('edit')
+                        = link_to raw('<i class="far fa-trash-alt"></i>'), admin_access_path(access),
+                                class: 'btn btn-sm btn-warning',
+                                method: :delete,
+                                data: {confirm: t('confirm')},
+                                title: t('remove')
+          /! /.card-body

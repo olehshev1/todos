@@ -1,0 +1,102 @@
+uk:
+  do it: "Зробити це"
+  are you sure?: "Ви впевнені?"
+  back: "Назад"
+  welcome: "Ласкаво просимо"
+  hello: "Вітаю"
+  name: "Назва"
+  description: "Опис"
+  photo: "Фото"
+  cancel: 'Відміна'
+  save: 'Зберегти'
+  action: 'Дії'
+  remove: 'Видалити'
+  remove photo: 'Видалити фото'
+  edit: 'Редагувати'
+  confirm: 'Ви дійсно хочете видалити це?'
+  admin_panel: 'Керування:'
+  about: 'Про проект'
+  about_description: "Проект TODO's покликаний реалізувати тестове завдання щодо ведення обліку керуванням задач."
+  errors:
+    Oops! Page not found: 'На жаль! Сторінку не знайдено.'
+    We could not find the page you were looking for: 'Не вдалося знайти сторінку, яку ви шукали.'
+    Meanwhile, you may: ' Тим часом ви можете'
+    return to Main page: ' повернутися на головну сторінку'
+    or try using the search form: ' або спробуйте скористатися формою пошуку'
+    search: 'Пошук'
+  admin:
+    dashboard3: 'Dashboard v3'
+    home: 'Головна'
+    statuses:
+      name: 'Статус'
+      list: 'Статуси'
+      add: 'Додати новий статус'
+      new: 'Новий статус'
+      edit: 'Редагування статусу'
+      remove: 'Видалити статус'
+      Todo was mark as Complete : 'Справа помічена як завершена'
+      Todo is back to Incomplete: 'Справу повернуто у незавершений стан'
+    accesses:
+      name: 'Рівень доступу'
+      list: 'Рівні доступу'
+      add: 'Додати новий рівень доступу'
+      new: 'Новий рівень доступу'
+      edit: 'Редагування рівня доступу'
+      remove: 'Видалити рівень доступу'
+    lists:
+      name: 'Список справ'
+      list: 'Списки справ'
+      add: 'Додати новий список справ'
+      new: 'Новий список справ'
+      edit: 'Редагування списку справ'
+      remove: 'Видалити список справ'
+      progress: 'Прогрес'
+      readonly: 'Справи інших користувачів'
+      username: 'Користувач'
+    todos:
+      name: 'Справа'
+      list: 'Справи'
+      add: 'Додати нову справу'
+      new: 'Нова справа'
+      edit: 'Редагування справи'
+      remove: 'Видалити справу'
+  activerecord:
+    models:
+      status:
+        one: 'Статус'
+        other: 'Статуси'
+        attributes:
+          name:
+            placeholder: 'Назва'
+        values:
+          name:
+            Complete : 'Завершено'
+            Incomplete : 'Незавершено'
+            In progress: 'В процесі виконання'
+      access:
+        one: 'Рівень доступу'
+        other: 'Рівні доступу'
+        attributes:
+          name:
+            placeholder: 'Назва'
+        values:
+          name:
+            Public: 'Може переглядати буть хто у режимі читання'
+            Protect: 'Може переглядати любий зареєстрований користувач у режимі читання'
+            Private: 'Только для меня, полный доступ'
+      list:
+        one: 'Список справ'
+        other: 'Списки справ'
+        attributes:
+          name:
+            placeholder: 'Назва'
+      todo:
+        one: 'Справа'
+        other: 'Справи'
+        attributes:
+          name:
+            placeholder: 'Назва'
+  will_paginate:
+    previous_label: "&#8592; Попередня"
+    next_label: "Наступна &#8594;"
+    page_gap: "&hellip;"

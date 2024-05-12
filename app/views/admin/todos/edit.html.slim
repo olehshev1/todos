@@ -1,0 +1,27 @@
+= content_for(:title, t('admin.todos.edit'))
+= simple_form_for [:admin, @list, @todo] do |f|
+  /! Main content
+  .content
+    .container-fluid
+      /! /.container-fluid
+      /! /.content
+      .row
+        .col-md-8
+          .card.card-yellow
+            .card-header
+              = t('admin.todos.edit')
+            .card-body
+              / - if @todo.image.attached?
+              /   div style=("border: 1px solid #28A745; padding: 2px")
+              /     = image_tag @todo.image.variant(resize: '200'), alt: @todo.name
+              /   = t('admin.todos.remove')
+              /   |  #{link_to t('do it'), destroy_image_admin_todo_path(@todo), method: :delete}
+              /   p
+              / - else
+              /   p style=("border: 1px solid #28A745; padding: 2px")
+              /     = image_tag 'backend/default-image.jpg', size: 200, alt: 'Photo Image'
+              = render partial: 'form', locals: {f: f}
+            .card-footer
+              = link_to  admin_list_todos_path, class: 'btn btn-danger'
+                = t(:cancel)
+              = f.submit t(:save), class: 'btn btn-success pull-right'

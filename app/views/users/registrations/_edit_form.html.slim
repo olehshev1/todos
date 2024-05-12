@@ -1,0 +1,111 @@
+= f.error_notification
+.input-group.mb-3
+  / input.form-control placeholder=("Full name") type="text" /
+  = f.input_field :username,
+          required: true,
+          autofocus: true,
+          autocomplete: 'username',
+          placeholder: t('devise.custom.username'),
+          type: :text,
+          class: 'form-control'
+  .input-group-append
+    .input-group-text
+      span.fas.fa-user
+.input-group.mb-3
+  / input.form-control placeholder="Email" type="email" /
+  = f.input_field :email,
+          required: true,
+          autofocus: true,
+          autocomplete: 'email',
+          placeholder: t('devise.custom.email'),
+          type: :email,
+          class: 'form-control'
+  / = f.input :email,
+                  required: true,
+                  autofocus: true,
+                  label: false,
+                  input_html: {autocomplete: "email",
+                          placeholder: 'Email'}
+  .input-group-append
+    .input-group-text
+      span.fas.fa-envelope
+.input-group.mb-3
+  / input.form-control placeholder="Password" type="password" /
+  = f.input_field :password,
+          required: false,
+          hint: "leave it blank if you don't want to change it",
+          autocomplete: 'new-password',
+          placeholder: t('devise.custom.password'),
+          type: :password,
+          class: 'form-control'
+  .input-group-append
+    .input-group-text
+      span.fas.fa-lock
+.input-group.mb-3
+  / input.form-control placeholder=("Retype password") type="password" /
+  = f.input_field :password_confirmation,
+          required: false,
+          autocomplete: 'new-password',
+          placeholder: t('devise.custom.retype password'),
+          type: :password,
+          class: 'form-control'
+  .input-group-append
+    .input-group-text
+      span.fas.fa-lock
+.input-group.mb-6
+  .row
+    .col-2
+      - if current_user.avatar.attached?
+        = image_tag current_user.avatar.variant(resize: "35x35"), alt: 'User Image'
+      - else
+        = image_tag 'backend/default-avatar.png', size: 35, alt: 'User Image'
+    .col-10
+      .input-group
+        .custom-file
+          / input.form-control placeholder=("Full name") type="text" /
+          = f.input_field :avatar,
+                  required: false,
+                  type: :file,
+                  class: 'custom-file-input form-control'
+          = f.label :avatar, t('devise.custom.registrations.choose photo'), class: 'custom-file-label'
+        .input-group-append
+          span.input-group-text
+            .fas.fa-camera
+.row
+  .col-12
+    - if current_user.avatar.attached?
+      = t('devise.custom.registrations.remove photo')
+      |  #{link_to t('do it'), delete_user_avatar_registration_path(current_user), method: :delete}
+    p
+.input-group.mb-3
+  / input.form-control placeholder=("Retype password") type="password" /
+  = f.input_field :current_password,
+          required: true,
+          hint: "we need your current password to confirm your changes",
+          autocomplete: 'current-password',
+          placeholder: t('devise.custom.current password'),
+          type: :password,
+          class: 'form-control'
+  .input-group-append
+    .input-group-text
+      span.fas.fa-lock
+.row
+  .col-8
+  / .icheck-primary
+              input#agreeTerms name="terms" type="checkbox" value="agree" /
+              label for="agreeTerms"
+                | I agree to the
+                a href="#"  terms
+  /! /.col
+- if can? :manage, User
+  .row
+    p
+      = t('devise.custom.registrations.cancel my account')
+      |  #{link_to t('do it'), registration_path(resource_name), data: {confirm: t('are you sure?')}, method: :delete}
+.row
+  .col-4
+    = link_to t('back'), :back, class: 'btn btn-primary btn-block'
+  .col-4
+  .col-4
+    / button.btn.btn-primary.btn-block type="submit"  Register
+    = f.button :submit, t('devise.custom.registrations.update'), class: 'btn btn-primary btn-block'

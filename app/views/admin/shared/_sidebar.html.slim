@@ -1,0 +1,64 @@
+/! Main Sidebar Container
+aside.main-sidebar.sidebar-dark-primary.elevation-4
+  /! Brand Logo
+  = link_to admin_root_path, {class: 'brand-link', style: 'font-size: 20px;'}
+    = image_tag 'backend/AdminLTELogo.png', alt: 'AdminLTE Logo', style: "opacity: .8", class: 'brand-image img-circle elevation-3'
+    span.brand-text.font-weight-light
+      = Rails.application.credentials[Rails.env.to_sym][:site_title]
+  /! Sidebar
+  .sidebar
+    /! Sidebar user panel (optional)
+    .user-panel.mt-3.pb-3.mb-3.d-flex
+      .image
+        - if current_user.avatar.attached?
+          = image_tag current_user.avatar.variant(resize: "160x160"), alt: 'User Image', class: 'img-circle elevation-2'
+        - else
+          = image_tag 'backend/default-avatar.png', alt: 'User Image', class: 'img-circle elevation-2'
+      .info
+        - if current_user.username.present?
+          = link_to edit_user_registration_path, class: 'd-block'
+            = current_user.username
+        - else
+          = link_to edit_user_registration_path, class: 'd-block'
+            = current_user.email
+      = link_to destroy_user_session_path, method: :delete
+        i.nav-icon
+          span.right.badge.badge-danger
+            = t('devise.custom.log out')
+    /! Sidebar Menu
+    nav.mt-2
+      ul.nav.nav-pills.nav-sidebar.flex-column[data-widget="treeview" role="menu" data-accordion="false"]
+        /!
+          | Add icons to the links using the .nav-icon class
+          | with font-awesome or any other icon font library
+          | EXAMPLES
+        li.nav-item
+          = link_to admin_root_path, class: 'nav-link'
+            i.fas.fa-circle.nav-icon
+            p
+              = t('admin.home')
+        li.nav-item
+          = link_to admin_readonly_path, class: 'nav-link'
+            i.fas.fa-circle.nav-icon
+            p
+              = t('admin.lists.readonly')
+        - if current_user.admin_role?
+          li.nav-item
+            = link_to admin_statuses_path, class: 'nav-link'
+              i.nav-icon.far.fa-circle.text-danger
+              p
+                = t('admin.statuses.list')
+          li.nav-item
+            = link_to admin_accesses_path, class: 'nav-link'
+              i.nav-icon.far.fa-circle.text-danger
+              p
+                = t('admin.accesses.list')
+          li.nav-item
+            = link_to admin_lists_path, class: 'nav-link'
+              i.nav-icon.far.fa-circle.text-danger
+              p
+                = t('admin.lists.list')
+
+
+/! /.sidebar-menu
+/! /.sidebar

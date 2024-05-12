@@ -1,0 +1,55 @@
+#  t('devise.custom.sessions.remember_me')
+en:
+  devise:
+    custom:
+      email: 'Email'
+      password: "Password"
+      retype password: "Retype password"
+      current password: "Current password"
+      new password: "New password"
+      confirm your new password: "Confirm your new password"
+      log in : "Log in"
+      sign up: "Sign up"
+      log out: "Log out"
+      guest: "Guest"
+      username: "Username"
+      sessions:
+        title: "Sign in to start your session"
+        remember_me: "Remember me"
+        sign_in: "Sign In"
+      registrations:
+        title: "Register a new membership"
+        register: "Register"
+        title_edit: "Edit user"
+        update: "Update"
+        cancel my account: "Cancel my account"
+        choose photo: "Choose photo"
+        remove photo: "Remove photo"
+      passwords:
+        forgot your password?: "Forgot your password?"
+        send me reset password instructions: "Send me reset password instructions"
+        change your password: "Change your password"
+        change my password: "Change my password"
+      confirmations:
+        resend confirmation instructions: "Resend confirmation instructions"
+      unlocks:
+        didnt receive unlock instructions?: "Didn't receive unlock instructions?"
+        resend unlock instructions: "Resend unlock instructions"
+      mailer:
+        confirmation_instructions:
+          you can confirm your account email through the link below: "You can confirm your account email through the link below:"
+          confirm my account: "Confirm my account"
+        email_changed:
+          were contacting you to notify you that your email is being changed to: "We're contacting you to notify you that your email is being changed to"
+          were contacting you to notify you that your email has been changed to: "We're contacting you to notify you that your email has been changed to"
+        password_change:
+          were contacting you to notify you that your password has been changed: "We're contacting you to notify you that your password has been changed"
+        reset_password_instructions:
+          someone has requested a link to change your password you can do this through the link below: "Someone has requested a link to change your password. You can do this through the link below."
+          change my password: "Change my password"
+          if you didnt request this, please ignore this email: "If you didn't request this, please ignore this email."
+          your password wont change until you access the link above and create a new one: "Your password won't change until you access the link above and create a new one."
+        unlock_instructions:
+          your account has been locked due to an excessive number of unsuccessful sign in attempts: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+          click the link below to unlock your account: "Click the link below to unlock your account:"
+          unlock my account: "Unlock my account"

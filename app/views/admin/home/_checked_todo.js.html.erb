@@ -1,0 +1,12 @@
+<script>
+$("#customCheckbox<%= todo.id %>").click(function(e, parameters) {
+
+    let nonUI = false;
+    try {
+        nonUI = parameters.nonUI;
+    } catch (e) {}
+    let checked = nonUI ? !this.checked : this.checked;
+    console.log('print');
+    $("#status_update_todo<%= todo.id %>").submit();
+});
+</script>

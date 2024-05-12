@@ -1,0 +1,31 @@
+= f.error_notification
+= f.input :reset_password_token, as: :hidden
+= f.full_error :reset_password_token
+.input-group.mb-3
+  / input.form-control placeholder="Password" type="password" /
+  = f.input_field :password,
+          required: true,
+          autocomplete: 'new-password',
+          placeholder: t('devise.custom.new password'),
+          type: :password,
+          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+          autofocus: true,
+          class: 'form-control'
+  .input-group-append
+    .input-group-text
+      span.fas.fa-lock
+.input-group.mb-3
+  / input.form-control placeholder="Confirm password" type="password" /
+  = f.input_field :password_confirmation,
+          required: true,
+          autocomplete: 'new-password',
+          placeholder: t('devise.custom.confirm your new password'),
+          type: :password,
+          class: 'form-control'
+  .input-group-append
+    .input-group-text
+      span.fas.fa-lock
+.row
+  .col-12
+    / button.btn.btn-primary.btn-block type="submit"  Request new password
+    = f.button :submit, t('devise.custom.passwords.change my password'), class: 'btn btn-primary btn-block'

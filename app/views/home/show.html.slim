@@ -1,0 +1,53 @@
+/! Main content
+.content
+  .container-fluid
+    .accordion#to-do-lists
+      .card
+        .card-body.p-0
+          table.table.table-striped
+            thead
+              tr.tr_title
+                th.th_collapse
+                th
+                  = t('admin.lists.list')
+                th.th_progress
+                  = t('admin.lists.progress')
+    - @lists.each do |list|
+      table.table.table-striped
+        tbody
+          tr
+            td.th_collapse
+              div.th_collapse id="heading#{list.id}"
+                = link_to raw('<i class="fas fa-angle-double-down"></i>'), "#multiCollapseList#{list.id}",
+                        style: 'color: grey',
+                        title: t('admin.todos.add'),
+                        'aria-controls' => "multiCollapseList#{list.id}",
+                        'aria-expanded' => 'true',
+                        'data-toggle' => 'collapse',
+                        role: 'button'
+            td.td_list_name
+              = link_to list_todos_path(list), class: 'list'
+                = list.name
+              .username
+                = list.user.username
+            td.th_progress
+              .progress.progress-xs
+                .progress-bar.progress-bar-danger style=("width: #{list.todos_complete}%")
+              span.badge.bg-danger
+                = "#{list.todos_complete}%"
+      div.collapse.multi-collapse id="multiCollapseNewTodos#{list.id}"
+        .todo_collapse
+          table.table
+            tbody
+              tr
+                td
+      div.collapse.show.multi-collapse id="multiCollapseList#{list.id}"
+        .todo_new_collapse
+          table.table
+            tbody
+              - list.todos.each do |todo|
+                = render partial: "home/index_todo", locals: {list: list, todo: todo}
+                /! /.card-body
+                  /! /.card
+nav.blog-pagination
+  = will_paginate @lists, list_classes: %w(pagination justify-content-end)

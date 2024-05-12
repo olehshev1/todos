@@ -1,0 +1,17 @@
+= f.error_notification
+.input-group.mb-3
+  / input.form-control placeholder="Email" type="email" /
+  = f.input_field :email,
+          required: true,
+          autocomplete: 'email',
+          placeholder: t('devise.custom.email'),
+          type: :email,
+          autofocus: true,
+          class: 'form-control'
+  .input-group-append
+    .input-group-text
+      span.fas.fa-envelope
+.row
+  .col-12
+    / button.btn.btn-primary.btn-block type="submit"  Request new password
+    = f.button :submit, t('devise.custom.passwords.send me reset password instructions'), class: 'btn btn-primary btn-block'

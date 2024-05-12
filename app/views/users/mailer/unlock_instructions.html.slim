@@ -1,0 +1,6 @@
+p
+  = t('hello')
+  |  #{@resource.email}!
+p = t('devise.custom.mailer.unlock_instructions.your account has been locked due to an excessive number of unsuccessful sign in attempts')
+p = t('devise.custom.mailer.unlock_instructions.click the link below to unlock your account')
+p= link_to t('devise.custom.mailer.unlock_instructions.unlock my account'), unlock_url(@resource, unlock_token: @token)
