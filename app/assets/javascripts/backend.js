@@ -1,0 +1,10 @@
+//= require rails-ujs
+//= require activestorage
+//= require jquery
+//= require jquery-ui
+//= require turbolinks
+//= require_tree './backend'
+//= require popper
+// = require bootstrap-sprockets
+//= require_tree './backend/dist/js'
+// = require_tree './backend/dist/js/pages'

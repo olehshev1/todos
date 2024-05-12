@@ -1,0 +1,20 @@
+.login-box
+  .login-logo
+    / a href="../../index2.html"
+    a href="/"
+      b> Admin
+      | LTE
+  /! /.login-logo
+  .card
+    .card-body.login-card-body
+      p.login-box-msg = t('devise.custom.unlocks.resend unlock instructions')
+      / form action="recover-password.html" method="post"
+      = simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+        = render partial: 'form', locals: {f: f}
+      /! /.col
+      p.mt-3.mb-1
+        = render "users/shared/links"
+      p.mb-0
+        / a.text-center href="register.html"  Register a new membership
+        /! /.login-card-body
+          /! /.login-box

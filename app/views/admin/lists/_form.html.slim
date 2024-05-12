@@ -1,0 +1,16 @@
+= f.error_notification
+= f.input :name,
+        placeholder: t('activerecord.models.list.attributes.name.placeholder'),
+        required: true,
+        label: t('name'),
+        wrapper: :horizontal_form
+
+= f.input :access_id,
+        as: :select,
+        label: t('activerecord.models.access.one'),
+        label_method: ->(obj){ t("activerecord.models.access.values.name.#{obj.name}") },
+        value_method: :id,
+        include_blank: true,
+        wrapper: :horizontal_form,
+        required: true,
+        collection: Access.all

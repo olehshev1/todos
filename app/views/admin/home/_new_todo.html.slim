@@ -1,0 +1,21 @@
+= simple_form_for [:admin, list, @todo], html: {id: "form_todo#{list.id}"}  do |f|
+  = f.error_notification
+  = f.input :name,
+          placeholder: t('activerecord.models.todo.attributes.name.placeholder'),
+          required: true,
+          label: t('name'),
+          wrapper: :horizontal_form,
+          input_html: { id: "todo_name#{list.id}" }
+
+
+  = f.input :status_id,
+          as: :select,
+          label: t('activerecord.models.status.one'),
+          label_method: ->(obj){ t("activerecord.models.status.values.name.#{obj.name}") },
+          value_method: :id,
+          include_blank: true,
+          wrapper: :horizontal_form,
+          required: true,
+          collection: Status.all,
+          input_html: { id: "todo_status_id#{list.id}" }
+  = f.submit t(:save), class: 'btn btn-success pull-right'

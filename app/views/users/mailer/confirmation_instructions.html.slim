@@ -1,0 +1,5 @@
+p
+  = t('welcome')
+  |  #{@email}!
+p = t('devise.custom.mailer.confirmation_instructions.you can confirm your account email through the link below')
+p= link_to t('devise.custom.mailer.confirmation_instructions.confirm my account'), confirmation_url(@resource, confirmation_token: @token)

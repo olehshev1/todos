@@ -1,0 +1,61 @@
+uk:
+  devise:
+    custom:
+      email: 'Поштова скринька'
+      password: "Пароль"
+      retype password: "Повторити пароль"
+      current password: "Поточний пароль"
+      new password: "Новий пароль"
+      confirm your new password: "Підтвердьте свій новий пароль"
+      log in : "Увійти"
+      sign up: "Зареєструватися"
+      log out: "Вийти"
+      guest: "Гість"
+      username: "Ім'я користувача"
+      sessions:
+        title: "Увійдіть, щоб розпочати сеанс"
+        remember_me: "Запам'ятати мене"
+        sign_in: "Увійти"
+      registrations:
+        title: "Реєстрація нового облікового запису"
+        register: "Надіслати"
+        title_edit: "Відредагувати обліковий запис"
+        update: "Надіслати"
+        cancel my account: "Видалити обліковий запис"
+        choose photo: "Вибрати фото"
+        remove photo: "Видалити фото"
+      passwords:
+        forgot your password?: "Забули пароль?"
+        send me reset password instructions: "Надіcлати інструкції по скиданню пароля"
+        change your password: "Зміна паролю"
+        change my password: "Змінити пароль"
+      confirmations:
+        didnt receive confirmation instructions?: "Не отримали інструкцій підтвердження?"
+        resend confirmation instructions: "Повторити вказівки підтвердження"
+      unlocks:
+        didnt receive unlock instructions?: "Не отримали інструкцій щодо розблокування?"
+        resend unlock instructions: "Надіслати інструкції щодо розблокування"
+      mailer:
+        confirmation_instructions:
+          you can confirm your account email through the link below: "Ви можете підтвердити електронну пошту свого облікового запису за посиланням нижче:"
+          confirm my account: "Підтвердити мій обліковий запис"
+        email_changed:
+          were contacting you to notify you that your email is being changed to: "Ми зв’язуємося з вами, щоб повідомити, що ваш електронний лист змінено на"
+          were contacting you to notify you that your email has been changed to: "Ми зв’язуємося з вами, щоб повідомити вас, що ваш електронний лист змінено на"
+        password_change:
+          were contacting you to notify you that your password has been changed: "Ми зв’язуємося з вами, щоб повідомити, що ваш пароль змінено"
+        reset_password_instructions:
+          someone has requested a link to change your password you can do this through the link below: "Хтось попросив посилання, щоб змінити ваш пароль. Ви можете зробити це за посиланням нижче."
+          change my password: "Змінити мій пароль"
+          if you didnt request this, please ignore this email: "Якщо ви цього не робили, проігноруйте цей електронний лист."
+          your password wont change until you access the link above and create a new one: "Ваш пароль не зміниться, поки ви не отримаєте доступ до посилання вище та створите нове."
+        unlock_instructions:
+          your account has been locked due to an excessive number of unsuccessful sign in attempts: "Ваш обліковий запис заблоковано через надмірну кількість невдалих спроб входу."
+          click the link below to unlock your account: "Клацніть посилання нижче, щоб розблокувати обліковий запис:"
+          unlock my account: "Розблокувати мій обліковий запис"
+
+
+
+
+
+

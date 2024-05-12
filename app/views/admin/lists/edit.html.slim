@@ -1,0 +1,27 @@
+= content_for(:title, t('admin.lists.edit'))
+= simple_form_for [:admin, @list] do |f|
+  /! Main content
+  .content
+    .container-fluid
+      /! /.container-fluid
+      /! /.content
+      .row
+        .col-md-8
+          .card.card-yellow
+            .card-header
+              = t('admin.lists.edit')
+            .card-body
+              / - if @list.image.attached?
+              /   div style=("border: 1px solid #28A745; padding: 2px")
+              /     = image_tag @list.image.variant(resize: '200'), alt: @list.name
+              /   = t('admin.lists.remove')
+              /   |  #{link_to t('do it'), destroy_image_admin_list_path(@list), method: :delete}
+              /   p
+              / - else
+              /   p style=("border: 1px solid #28A745; padding: 2px")
+              /     = image_tag 'backend/default-image.jpg', size: 200, alt: 'Photo Image'
+              = render partial: 'form', locals: {f: f}
+            .card-footer
+              = link_to  admin_lists_path, class: 'btn btn-danger'
+                = t(:cancel)
+              = f.submit t(:save), class: 'btn btn-success pull-right'

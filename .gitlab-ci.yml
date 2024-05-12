@@ -1,0 +1,47 @@
+image: "registry.gitlab.com/olegshevtsov1/dra:rc1"
+
+
+# Cache gems in between builds
+.cache_bundler: &cache_bundler
+  cache:
+    paths:
+      - vendor/bundle
+
+
+before_script:
+  # Project setup
+  - rm Gemfile.lock	
+  - bundle check || bundle install --jobs $(nproc)
+
+
+
+stages:
+  - style
+  - production deploy
+  - staging deploy
+
+
+
+rubocop:
+  stage: style
+  <<: *cache_bundler
+  script:
+    - rubocop
+  only:
+    - staging
+    - master
+
+staging deploy:
+  stage: staging deploy
+  script:
+    - cap staging deploy
+  only:
+    - staging
+
+production deploy:
+  stage: production deploy
+  script:
+    - cap production deploy
+  only:
+    - master
+

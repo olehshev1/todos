@@ -1,0 +1,11 @@
+p
+  = t('hello')
+  |  #{@email}!
+- if @resource.try(:unconfirmed_email?)
+  p
+    = t('devise.custom.mailer.email_changed.were contacting you to notify you that your email is being changed to')
+    | #{@resource.unconfirmed_email}.
+- else
+  p
+    = t('devise.custom.mailer.email_changed.were contacting you to notify you that your email has been changed to')
+    | #{@resource.email}.

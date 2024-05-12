@@ -1,0 +1,27 @@
+= content_for(:title, t('admin.statuses.edit'))
+= simple_form_for [:admin, @status] do |f|
+  /! Main content
+  .content
+    .container-fluid
+      /! /.container-fluid
+      /! /.content
+      .row
+        .col-md-8
+          .card.card-yellow
+            .card-header
+              = t('admin.statuses.edit')
+            .card-body
+              / - if @status.image.attached?
+              /   div style=("border: 1px solid #28A745; padding: 2px")
+              /     = image_tag @status.image.variant(resize: '200'), alt: @status.name
+              /   = t('admin.statuses.remove')
+              /   |  #{link_to t('do it'), destroy_image_admin_status_path(@status), method: :delete}
+              /   p
+              / - else
+              /   p style=("border: 1px solid #28A745; padding: 2px")
+              /     = image_tag 'backend/default-image.jpg', size: 200, alt: 'Photo Image'
+              = render partial: 'form', locals: {f: f}
+            .card-footer
+              = link_to  admin_statuses_path, class: 'btn btn-danger'
+                = t(:cancel)
+              = f.submit t(:save), class: 'btn btn-success pull-right'

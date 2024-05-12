@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title
+      = content_for?(:title) ? yield(:title) : Rails.application.credentials[Rails.env.to_sym][:site_title]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'backend', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'backend', 'data-turbolinks-track': 'reload'
+    = render partial: 'auth/shared/head'
+  body.hold-transition.login-page
+    / = render partial: 'auth/shared/flash'
+    = render partial: 'auth/shared/header'
+    = yield
+    = render partial: 'auth/shared/footer'
+    = render partial: 'auth/shared/foot'
+

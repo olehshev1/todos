@@ -1,0 +1,62 @@
+ru:
+  devise:
+    custom:
+      email: 'Почтовый ящик'
+      password: "Пароль"
+      retype password: "Повторить пароль"
+      current password: "Текущий пароль"
+      new password: "Новый пароль"
+      confirm your new password: "Подтвердите ваш новый пароль"
+      log in : "Войти"
+      sign up: "Зарегистрироваться"
+      log out: "Выйти"
+      guest: "Гость"
+      username: "Имя пользователя"
+      sessions:
+        title: "Войдите, чтобы начать сеанс"
+        remember_me: "Запомнить меня"
+        sign_in: "Войти"
+      registrations:
+        title: "Регистрация нового участника"
+        register: "Отправить"
+        title_edit: "Отредактировать учетные данные"
+        update: "Отправить"
+        cancel my account: "Удалить учетные данные"
+        choose photo: "Выбрать фото"
+        remove photo: "Удалить фото"
+
+      passwords:
+        forgot your password?: "Забыли пароль?"
+        send me reset password instructions: "Отправить инструкции по сбросу пароля"
+        change your password: "Изменение пароля"
+        change my password: "Изменить пароль"
+      confirmations:
+        didnt receive confirmation instructions?: "Не получили подтверждение инструкции?"
+        resend confirmation instructions: "Отправить подтверждение инструкции"
+      unlocks:
+        didnt receive unlock instructions?: "Не получили инструкции по разблокировке?"
+        resend unlock instructions: "Отправить инструкцию по разблокировке"
+      mailer:
+        confirmation_instructions:
+          you can confirm your account email through the link below: "Вы можете подтвердить адрес электронной почты своей учетной записи по ссылке ниже:"
+          confirm my account: "Подтвердить мою учетную запись"
+        email_changed:
+          were contacting you to notify you that your email is being changed to: "Мы связываемся с вами, чтобы уведомить вас об изменении вашего адреса электронной почты на"
+          were contacting you to notify you that your email has been changed to: "Мы связываемся с вами, чтобы уведомить вас, что ваш адрес электронной почты был изменен на"
+        password_change:
+          were contacting you to notify you that your password has been changed: "Мы связываемся с вами, чтобы уведомить вас, что ваш пароль был изменен"
+        reset_password_instructions:
+          someone has requested a link to change your password you can do this through the link below: "Кто-то запросил ссылку для изменения вашего пароля. Вы можете сделать это по ссылке ниже."
+          change my password: "Изменить пароль"
+          if you didnt request this, please ignore this email: "Если вы не просили об этом, пожалуйста, игнорируйте это письмо."
+          your password wont change until you access the link above and create a new one: "Ваш пароль не изменится, пока вы не перейдете по ссылке выше и не создадите новый."
+        unlock_instructions:
+          your account has been locked due to an excessive number of unsuccessful sign in attempts: "Ваш аккаунт был заблокирован из-за чрезмерного количества неудачных попыток входа."
+          click the link below to unlock your account: "Нажмите на ссылку ниже, чтобы разблокировать свой аккаунт:"
+          unlock my account: "Разблокировать мой аккаунт"
+
+
+
+
+
+

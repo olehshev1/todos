@@ -1,0 +1,64 @@
+require: rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - bin/**/*
+    - db/**/*
+    - config/**/*
+    - lib/templates/**/*
+    - vendor/**/*
+    - node_modules/**/*
+    # disable for task folder
+    - lib/tasks/**/*
+    # disable for tests because of specs are deprecated
+    - spec/**/*
+
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+Style/EmptyCaseCondition:
+  Enabled: false
+
+Style/SymbolArray:
+  Description: 'Use %i or %I for arrays of symbols.'
+  Enabled: true
+
+Metrics/LineLength:
+  Description: 'Limit lines to 140 characters.'
+  Max: 140
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/AbcSize:
+  Max: 100
+
+Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  SupportedStyles:
+    - nested
+    - compact
+
+# Align ends correctly.
+Layout/EndAlignment:
+   EnforcedStyleAlignWith: variable
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Metrics/BlockLength:
+  Max: 45
+  #  CountComments: true
+  Exclude:
+    - 'spec/**/*.rb'
+
+Style/GuardClause:
+  Enabled: false

@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title
+      = content_for?(:title) ? yield(:title) : Rails.application.credentials[Rails.env.to_sym][:site_title]
+	= csrf_meta_tags
+	= csp_meta_tag
+    = stylesheet_pack_tag 'frontend', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'frontend', 'data-turbolinks-track': 'reload'
+	= render partial: 'shared/head'
+  body
+    .container
+      = render partial: 'shared/header'
+      / = render partial: 'shared/flash'
+    main.container role="main"
+      .row
+        .col-md-8.blog-main
+          h3.pb-3.mb-4.font-italic.border-bottom
+            = content_for?(:title) ? yield(:title) : t('admin.todos.list')
+          .blog-post
+            = yield
+        = render partial: 'shared/sidebar'
+    = render partial: 'shared/footer'
+    = render partial: 'shared/foot'
